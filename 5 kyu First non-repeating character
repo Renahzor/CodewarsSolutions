@@ -1,0 +1,22 @@
+using System.Collections.Generic;
+
+public class Kata
+{
+  public static string FirstNonRepeatingLetter(string s)
+  {
+    List<char> lowercase = new List<char>();
+    lowercase.AddRange(s.ToLower());
+    
+    int index = 0;
+    
+    foreach (char c in lowercase)
+    {
+      int count = lowercase.FindAll(name => name == c).Count;    
+      if (count == 1)
+        return s[index].ToString();
+      index++;
+    }
+    
+    return "";
+  }
+}
