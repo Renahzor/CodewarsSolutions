@@ -1,0 +1,21 @@
+using System;
+
+public class Kata
+{
+  public static int DuplicateCount(string str)
+  {
+    string s = str.ToLower();
+    string listOfCharactersChecked = "";
+    string duplicateCharactersFound = "";
+    for (int i = 0; i < s.Length; i++)
+    {
+      if( listOfCharactersChecked.Contains(s[i]) )
+        {
+          if ( !duplicateCharactersFound.Contains(s[i]) )
+            duplicateCharactersFound += s[i];
+        }
+      listOfCharactersChecked += s[i];
+    }
+    return duplicateCharactersFound.Length;
+  }
+}
