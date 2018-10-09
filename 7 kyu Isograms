@@ -1,0 +1,19 @@
+using System;
+
+public class Kata
+{
+  public static bool IsIsogram(string str) 
+  {
+    str = str.ToLower();
+    string charactersChecked = "";
+    for (int i = 0; i < str.Length; i++)
+    {
+      if( charactersChecked.Contains(str[i]) )
+        return false;
+      
+      charactersChecked += str[i];
+    }
+    
+    return true;
+  }
+}
