@@ -1,0 +1,23 @@
+public static class Kata
+{
+  public static string AlphabetPosition(string text)
+  {
+    text = text.ToLower();
+    
+    string alphabet = "abcdefghijklmnopqrstuvwxyz";
+    string numericPositions = "";
+    
+    for (int i = 0; i < text.Length; i++)
+    {
+      if ( alphabet.Contains(text[i]) )
+        {
+          numericPositions += (alphabet.IndexOf(text[i]) + 1);
+          numericPositions += " ";
+        }
+    }
+    
+    //remove the final trailing space in the string.
+    numericPositions = numericPositions.Substring(0, (numericPositions.Length - 1) );
+    return numericPositions;
+  }
+}
