@@ -1,0 +1,18 @@
+public class Kata
+{
+  public static int FindShort(string s)
+  {
+    int shortest = 0;
+    
+    //split the string into component words
+    string[] words = s.Split(' ');
+    
+    //check each word for length and store the length of the shortest string
+    foreach (string t in words)
+      {
+        if (shortest == 0 || t.Length < shortest)
+          shortest = t.Length;
+      }
+    return shortest;
+  }
+}
