@@ -1,0 +1,28 @@
+public class Kata
+{
+  public static string[] TowerBuilder(int nFloors)
+  {
+    string[] tower = new string [nFloors];
+    
+    int numberOfRooms = (nFloors * 2) - 1;//number of rooms in the bottom floor
+    int numberOfEmptyRooms = 0;
+    
+    for (int i = nFloors - 1; i >= 0; i--)
+    {
+      for (int empty = 0; empty < numberOfEmptyRooms; empty++)
+        tower[i] += " ";
+      
+      for (int room = 0; room < numberOfRooms; room++)
+        tower[i] += "*";
+      
+      for (int empty = 0; empty < numberOfEmptyRooms; empty++)
+        tower[i] += " ";
+      
+      numberOfRooms -= 2;
+      numberOfEmptyRooms ++;
+      
+    }
+      
+    return tower;
+  }
+}
