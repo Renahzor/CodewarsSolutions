@@ -1,0 +1,20 @@
+public class Kata
+{
+  public static bool Alphanumeric(string str)
+  {
+    if (str == "")
+      return false;
+
+    string lowerCase = str.ToLower();
+    string valid = "abcdefghijklmnopqrstuvwxyz0123456789";
+    
+    foreach (char c in lowerCase)
+    {
+      if (!valid.Contains(c))
+        return false;
+    }
+    
+    return true;
+    
+  }
+}
