@@ -1,0 +1,28 @@
+using System.Collections.Generic;
+using System.Linq;
+
+public class Kata
+{
+    public static long QueueTime(int[] customers, int n)
+    {
+        int[] lanes = new int[n];
+        
+        for (int i = 0; i < customers.Length; i++)
+        {
+           lanes[indexOfLowest(lanes)] += customers[i];
+        }
+        return lanes.Max();
+    }
+    
+    public static int indexOfLowest(int[] array)
+    {
+      int positionOfLowest = 0;
+      for (int i = 0; i < array.Length; i++)
+      {
+        if (array[i] < array[positionOfLowest]) 
+          positionOfLowest = i;
+      }
+      
+      return positionOfLowest;
+    }
+}
